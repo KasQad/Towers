@@ -10,11 +10,11 @@ public class NpcSpawner : MonoBehaviour
 
 	private void Start()
 	{
-		StartCoroutine(CreatNpc());
+		StartCoroutine(CreateNpc());
 	}
 
 	// ReSharper disable Unity.PerformanceAnalysis
-	private IEnumerator CreatNpc()
+	private IEnumerator CreateNpc()
 	{
 		while (npcCount > 0)
 		{
