@@ -31,10 +31,10 @@ public class NpcMoveController : MonoBehaviour
 			NewTargetPoint(++_currentPointIndex);
 	}
 
-	public void CreateNewTargetPointList(List<Transform> newTargetPointList)
+	public void CreateNewTargetPointList(List<Transform> newTargetPointsList)
 	{
 		pointsList.Clear();
-		pointsList = newTargetPointList;
+		pointsList = newTargetPointsList;
 	}
 
 	private void NewTargetPoint(int pointIndex)
