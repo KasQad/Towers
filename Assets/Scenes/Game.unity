@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyController: {fileID: 1781572365}
-  attackNearEnemy: 0
+  attackNearbyEnemy: 1
 --- !u!4 &352968460
 Transform:
   m_ObjectHideFlags: 0
@@ -1091,64 +1091,6 @@ Transform:
   - {fileID: 197231024}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &486515315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 486515317}
-  - component: {fileID: 486515316}
-  m_Layer: 0
-  m_Name: EnemySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &486515316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486515315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e267bf19b776cad4e8d4ad90cf897bc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathPointsList:
-  - {fileID: 175335467}
-  - {fileID: 1574325148}
-  - {fileID: 510331544}
-  - {fileID: 2126352947}
-  - {fileID: 296343486}
-  - {fileID: 1955597891}
-  - {fileID: 1671016909}
-  - {fileID: 1133553771}
-  - {fileID: 676442511}
-  - {fileID: 383137515}
-  - {fileID: 171518662}
-  - {fileID: 231997476}
-  - {fileID: 1362870362}
-  enemiesContainer: {fileID: 541818473}
---- !u!4 &486515317
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486515315}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8396575, y: 2.5600328, z: -3.4052696}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &489807563
 GameObject:
@@ -1376,7 +1318,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &628347092
 GameObject:
@@ -3176,7 +3118,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330878e8654e1324bbd24d416270b006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawner: {fileID: 486515316}
+  enemiesContainer: {fileID: 541818473}
+  pathPointsList:
+  - {fileID: 175335467}
+  - {fileID: 1574325148}
+  - {fileID: 510331544}
+  - {fileID: 2126352947}
+  - {fileID: 296343486}
+  - {fileID: 1955597891}
+  - {fileID: 1671016909}
+  - {fileID: 1133553771}
+  - {fileID: 676442511}
+  - {fileID: 383137515}
+  - {fileID: 171518662}
+  - {fileID: 231997476}
+  - {fileID: 1362870362}
   enemyCount: 100
 --- !u!4 &1781572366
 Transform:

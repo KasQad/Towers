@@ -10,13 +10,13 @@ namespace Enemies
 		[SerializeField] private NavMeshAgent navMeshAgent;
 		[SerializeField] private List<Transform> pathPointsList = new List<Transform>();
 		private int _currentPointIndex;
-
+		
 		private void Start()
 		{
 			NewTargetPathPoint(_currentPointIndex);
 		}
 
-		private void FixedUpdate()
+		private void Update()
 		{
 			CheckTargetPathPoint();
 		}
@@ -25,10 +25,7 @@ namespace Enemies
 		{
 			if (pathPointsList.Count == 0) return;
 			if (_currentPointIndex > pathPointsList.Count)
-			{
-				baseEnemy.DestroyEnemy(baseEnemy);
-				return;
-			}
+				baseEnemy.Destroy();
 
 			if (navMeshAgent.remainingDistance < navMeshAgent.stoppingDistance)
 				NewTargetPathPoint(++_currentPointIndex);

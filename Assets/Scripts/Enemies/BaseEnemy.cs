@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using ScriptableObject.Enemies;
 using UnityEngine;
@@ -11,24 +10,33 @@ namespace Enemies
         [SerializeField] private EnemyMove enemyMove;
         public Enemy enemy;
         public NavMeshAgent navMeshAgent;
-        public string title;
         public float health;
-        private float _speed;
-        public Action<BaseEnemy> DestroyEnemy;
 
-        public void Initialize(List<Transform> newPointsList, Action<BaseEnemy> actionDestroyEnemy)
+        public delegate void GetHitDelegate(BaseEnemy baseEnemy, float damage);
+        public static event GetHitDelegate GetHit;
+
+        public delegate void DestroyEnemyDelegate(BaseEnemy baseEnemy);
+        public static event DestroyEnemyDelegate DestroyEnemy;
+
+        public void Initialize(List<Transform> newPointsList)
         {
-            title = enemy.title;
+            gameObject.name = $"{enemy.title}";
             health = enemy.health;
-            navMeshAgent.speed = _speed = enemy.speed;
+            navMeshAgent.speed = enemy.speed;
             enemyMove.CreateNewPathPointsList(newPointsList);
-            DestroyEnemy = actionDestroyEnemy;
         }
 
         public void GetDamage(float damage)
         {
+            if (GetHit == null) return;
             health -= damage;
-            if (health <= 0) DestroyEnemy(this);
+            GetHit(this, damage);
+            if (health <= 0) Destroy();
+        }
+
+        public void Destroy()
+        {
+            DestroyEnemy?.Invoke(this);
         }
     }
 }
